@@ -1,0 +1,109 @@
+.App {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #FFFFFF;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.App-header {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #FF006D;
+}
+
+.queue-list {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.queue-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.header-list{
+  color:#003246
+}
+
+.queue-list li {
+  background-color: #003246;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.queue-list button {
+  background-color: #FF006D;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.queue-list button:hover {
+  background-color: #fff;
+  color: #FF006D;
+}
+
+.queue-action {
+  margin-top: 20px;
+}
+
+.message {
+  background-color: #282828;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.no-message{
+  color: #003246;
+}
+
+button {
+  background-color: #FF006D;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.button-disabled {
+  background-color: #FF006D;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button.button-disabled:hover {
+  background-color: #FF006D;
+  color:#fff;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.selected-queue{
+  color: #003246;
+}
+
+.loading{
+  color: #003246;
+}
+
+button:hover {
+  background-color: #FF006D;
+  opacity: 0.8;
+}
