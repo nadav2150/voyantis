@@ -18,7 +18,7 @@ Before you begin, make sure you have the following installed on your computer:
    Open your terminal and run:
    ```bash
    git clone https://github.com/nadav2150/voyantis.git
-   cd message-queue-manager/server
+   cd ../server
 
 2.Install the dependencies: Inside the server folder, run:
    ```bash
