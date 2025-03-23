@@ -38,16 +38,29 @@ app.get("/api/:queue_name", (req, res) => {
   const { queue_name } = req.params;
   const timeout = parseInt(req.query.timeout) || 10000;
 
-  if (!queues[queue_name] || queues[queue_name].length === 0) {
-    return res.status(204).end();
+  if (!queues[queue_name]) {
+    queues[queue_name] = [];
   }
 
-  const message = queues[queue_name].shift();
+  const startTime = Date.now();
 
-  setTimeout(() => {
-    if (message) {
+  const interval = setInterval(() => {
+    if (queues[queue_name].length > 0) {
+      const message = queues[queue_name].shift();
+      clearInterval(interval);
+      clearTimeout(timeoutId);
       return res.status(200).json(message);
     }
+
+    if (Date.now() - startTime >= timeout) {
+      clearInterval(interval);
+      return res.status(204).end();
+    }
+  }, 100);
+
+  const timeoutId = setTimeout(() => {
+    clearInterval(interval);
+    return res.status(204).end();
   }, timeout);
 });
 

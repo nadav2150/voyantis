@@ -21,6 +21,10 @@ function App() {
     };
 
     fetchQueues();
+
+    const intervalId = setInterval(fetchQueues, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleGoClick = async () => {
@@ -29,7 +33,7 @@ function App() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${BASE_URL}/${selectedQueue}?timeout=1000`
+        `${BASE_URL}/${selectedQueue}?timeout=10000`
       );
 
       if (response.status === 200) {
